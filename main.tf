@@ -13,7 +13,7 @@ resource "aws_internet_gateway" "main" {
 resource "aws_subnet" "public" {
     count = length(var.public_subnet_cidr)
     vpc_id =aws_vpc.main.id
-    subnet_cidr_block = var.public_subnet_cidr[count.index]
+    cidr_block = var.public_subnet_cidr[count.index]
     availability_zone = local.az_names[count.index]
     map_public_ip_on_launch = true
     tags= merge(
