@@ -18,5 +18,5 @@ locals {
         },
         var.igw_tags
     )
-    az_names = slice(data.aws_availability_zone.available.names,0,2)
+    az_names = slice(data.aws_availability_zones.available.names,0,2)
 }
