@@ -5,11 +5,11 @@ resource "aws_vpc_peering_connection" "default" {
     #Requestor
     vpc_id = aws_vpc.main.id 
     auto_accept = true
-    acceptor {
+    accepter  {
         allow_remote_vpc_dns_resolution = true 
     }
 
-    requestor {
+    requester  {
         allow_remote_vpc_dns_resolution = true
     }
 
