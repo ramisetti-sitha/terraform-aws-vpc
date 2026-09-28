@@ -60,7 +60,7 @@ resource "aws_route_table" "public" {
     tags = merge (
         local.common_tags,
         {
-            Name = "${var.project}-${var.environment}"
+            Name = "${var.project}-${var.environment}-public"
         },
         var.public_route_table_tags
     )
@@ -71,7 +71,7 @@ resource "aws_route_table" "private" {
     tags = merge (
         local.common_tags,
         {
-            Name = "${var.project}-${var.environment}"
+            Name = "${var.project}-${var.environment}-private"
         },
         var.private_route_table_tags
     )
@@ -82,7 +82,7 @@ resource "aws_route_table" "database" {
     tags = merge (
         local.common_tags,
         {
-            Name = "${var.project}-${var.environment}"
+            Name = "${var.project}-${var.environment}-database"
         },
         var.database_route_table_tags
     )
